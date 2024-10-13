@@ -1,0 +1,6 @@
+.sections__body{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-height: calc(100dvh - var(--header__height));
+}

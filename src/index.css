@@ -1,0 +1,147 @@
+/*********** ROOT ***********/
+:root{
+  --dark__blue: #2d314d;
+  --lime__green: #31d35c;
+  --bright__cyan: #2bb7da;
+  
+  --grayish__blue: #9698a6;
+  --light__grayish__blue: #f3f4f6;
+  --very__light__gray: #fafafa;
+  --white: #ffffff;
+
+  --header__height: 4rem;
+}
+
+/***************** RESET *****************/
+html{
+  box-sizing: border-box;
+  font-family: "Public Sans", serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  position: relative;
+  margin: 0;
+  width: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden;
+
+  &:has(.nav__menu--open){
+    overflow-y: hidden;
+  }
+}
+
+button,
+input{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: 300ms ease;
+}
+
+a{
+  text-decoration: none;
+  transition: 300ms ease;
+  display: inline-block;
+}
+
+figure{
+  user-select: none;
+  flex-shrink: 0;
+  display: flex;
+}
+
+img, video, iframe{
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+li{
+  list-style: none;
+}
+
+p{
+  text-wrap: pretty;
+  font-size: 0.912rem;
+}
+
+select,
+option{
+  cursor: pointer;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+}
+
+/***************** UTILITIES *****************/
+.container{
+  width: 90%;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.btn__cta{
+  color: var(--white);
+  font-size: clamp(0.85rem, 3.5vw, 1rem);
+  padding: 0.85rem 2rem;
+  border-radius: 1.5rem;
+  background-image: linear-gradient(to right, var(--lime__green), var(--bright__cyan));
+
+  &:hover{
+    background-color: #fff5;
+    background-blend-mode: color;
+  }
+}
+
+.flex-c-c{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title__section{
+  font-weight: 400;
+  color: var(--dark__blue);
+}
+
+.description__section{
+  font-size: clamp(0.75rem, 3.5vw, 0.9rem);
+  line-height: 1.5;
+  color: var(--grayish__blue);
+}
+
+.section__texts{
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media screen and (width >= 64rem){
+  .container{
+    width: 80%;
+  }
+  .section__texts{
+    text-align: start;
+    align-items: flex-start;
+  }
+}

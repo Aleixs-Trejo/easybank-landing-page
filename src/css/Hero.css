@@ -1,0 +1,113 @@
+.hero__container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero__images{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero__bg{
+  position: absolute;
+  z-index: 1;
+  background-image: url("../assets/bg-intro-mobile.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 0;
+  inset-inline: 0;
+  height: 100%;
+}
+
+.hero__mockup{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 17.4rem;
+}
+
+.mockup__figure{
+  width: 100%;
+  height: 100%;
+  margin-inline: auto;
+  max-width: 320px;
+
+  & .mockup__img{
+    object-position: bottom;
+  }
+}
+
+.hero__texts__content{
+  width: 95%;
+  max-width: 75rem;
+  margin-inline: auto;
+  padding: 0.75rem;
+  overflow: hidden;
+}
+
+.hero__title{
+  font-size: 2rem;
+}
+
+@media screen and (width >= 64rem){
+  .hero {
+    position: relative;
+  }
+
+  .hero__container{
+    width: 80%;
+    max-width: 75rem;
+    margin-inline: auto;
+    gap: 0;
+  }
+
+  .hero__title{
+    font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+  }
+
+  .description__section.hero__description{
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+  }
+
+  .hero__images{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 60%;
+    max-width: 37.5rem;
+    height: 42rem;
+    & .hero__bg{
+      background-image: url("../assets/bg-intro-desktop.svg");
+      background-size: 140%;
+      background-position: 10% -11rem;
+    }
+
+    & .hero__mockup{
+      height: unset;
+      position: absolute;
+      top: -6rem;
+      right: -6rem;
+
+      & .mockup__figure{
+        max-width: unset;
+      }
+    }
+  }
+
+  .hero__texts{
+    width: 40%;
+  }
+
+  .section__texts.hero__texts__content{
+    width: 100%;
+    padding: 7rem 0;
+    text-align: start;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
